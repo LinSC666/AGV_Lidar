@@ -3,7 +3,7 @@
 ### 可参考github上的[readme.md](https://github.com/MUZUIXIAOHAI/ros_rslidar)
 ### 首先把库从github上拉下来
 ```
-git clone https://github.com/MUZUIXIAOHAI/ros_rslidar.git
+git clone https://github.com/LinSC666/ros_rslidar.git
 ```
 ### 然后安装需要的库libpcap-dev
 ```
