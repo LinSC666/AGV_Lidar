@@ -20,7 +20,7 @@ roslaunch rslidar_pointcloud rs_lidar_16.launch
 
 ***
 
-# 把16线激光雷达数据合成高质量2D激光雷达数据
+# 把16线激光雷达数据合成高质量2D激光雷达数据（这步只是让你体会生成的2d雷达线速laserscan）
 ### 可参考[蓝鲸机器人论坛的帖子](https://community.bwbot.org/topic/521/%E4%BD%BF%E7%94%A8pointcloud_to_laserscan%E5%8C%85%E5%B0%86%E9%80%9F%E8%85%BE%E8%81%9A%E5%88%9B3d%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E8%BD%AC%E6%8D%A2%E6%88%90%E9%AB%98%E8%B4%A8%E9%87%8F2d%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE)（叫“使用pointcloud_to_laserscan包将速腾聚创3D激光雷达转换成高质量2d激光雷达”）
 ### 利用pointcloud_to_laserscan把点云数据合成2D激光雷达数据（需要先启动16线激光雷达生成点云数据）
 '''
@@ -30,6 +30,7 @@ roslaunch pointcloud_to_laserscan xiaoqiang_rslidar.launch
 ***
 
 # 利用cartogragper包构建高质量地图
+###(这步是真正建图的操作，已包括前面那一步laserscan生成！lanuch只需执行xiaoqiang_rplidar_2d_16.launch即可！）
 ### 可参考[蓝鲸论坛的这个帖子](https://community.bwbot.org/topic/137/%E5%B0%8F%E5%BC%BAros%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%95%99%E7%A8%8B-16-___%E5%A4%A7%E8%8C%83%E5%9B%B4%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BEslam%E4%B8%8E%E5%AE%9E%E6%97%B6%E5%9B%9E%E8%B7%AF%E9%97%AD%E5%90%88%E6%B5%8B%E8%AF%95)，或者参考小强机器人手册中的第16章节
 ### 使用rplidar构建2D地图（也可以使用16线激光雷达合成的2D激光雷达数据去跑）
 **单线激光雷达：**
@@ -42,7 +43,8 @@ roslaunch cartographer_ros xiaoqiang_rplidar_2d_16.launch
 ```
 ### 采集完地图数据后使用下面命令保存地图，地图数据就保存在执行命令的文件夹下
 ```
-rosrun map_server map_saver --occ 51 --free 49 -f work0
+rosrun map_server map_saver --occ 51 --free 49 -f xxxmap
+(该命令比rosrun map_server map_saver -f xxxmap来得要好！）
 ```
 注意：如果该命令有错说明map_server这个包旧了，更新包就行了
 运行时如果没有机器人显示，先运行一下demo_xiaoqiang_rslidar_scan.launch文件，再运行xiaoqiang_rplidar_2d_16.launch文件，注意：没有机器人显示出来时也可以正常建图
