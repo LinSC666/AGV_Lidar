@@ -1,6 +1,6 @@
 # 关于速腾16线激光雷达的使用
-### 已经配置好，网线直接连上就可以了
-### 可参考github上的[readme.md](https://github.com/MUZUIXIAOHAI/ros_rslidar)
+### 已经配置好，网线直接连上就可以了(右击wifi的Edit Connection,找到Ethernet里面的选项设置IPv4的IP为192.168.1.102即可！）
+### 可参考github上的[readme.md](https://github.com/LinSC666/ros_rslidar)
 ### 首先把库从github上拉下来
 ```
 git clone https://github.com/LinSC666/ros_rslidar.git
