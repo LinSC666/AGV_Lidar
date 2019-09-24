@@ -285,7 +285,7 @@ odom_model_type为模型类型这里diff为差速控制
 ***
 # tf_tree图
 ## 正常运行时的tf树，tf树很重要，很多时候不能正常运行的时候就是tf树有问题
-/home/linsc/Desktop/Screenshot from 2019-09-24 11-51-23.png
+![Image text](https://github.com/LinSC666/rosgraph/blob/master/tf.png)
 从tf树可以看到：   
 这里有个概念很重要frame_id和主题的区别，比如都叫odom的时候，frame_id表示里程计这个坐标系，而主题则表示这个里程计消息数据，两者是完全不一样的东西，比如frame_id是和map坐标系那样的东西，而主题是和速度主题cmd_vel这样的东西。    
 大多数运行不正确的时候可以在**终端运行**以下命令查看tf树：
@@ -295,7 +295,7 @@ rosrun rqt_tf_tree rqt_tf_tree
 
 # 节点图
 ## 节点图可以清楚地看到哪个节点发布了什么消息和订阅了什么消息
-/home/linsc/Desktop/Screenshot from 2019-09-24 11-52-01.png
+![Image text](https://github.com/LinSC666/rosgraph/blob/master/node.png)
 从这个节点图很清楚地可以看到：    
 /rplidarNode这个节点发布了雷达数据主题/scan
 /rplidartoADV节点发布了里程计主题/odom
