@@ -1,9 +1,9 @@
 # 关于速腾16线激光雷达的使用
-### 已经配置好，网线直接连上就可以了(右击wifi的Edit Connection,找到Ethernet里面的选项设置IPv4的IP为192.168.1.102即可！）
-### 可参考github上的[readme.md](https://github.com/LinSC666/ros_rslidar)
+### 已经配置好，网线直接连上就可以了
+### 可参考github上的[readme.md](https://github.com/MUZUIXIAOHAI/ros_rslidar)
 ### 首先把库从github上拉下来
 ```
-git clone https://github.com/LinSC666/ros_rslidar.git
+git clone https://github.com/MUZUIXIAOHAI/ros_rslidar.git
 ```
 ### 然后安装需要的库libpcap-dev
 ```
@@ -285,7 +285,7 @@ odom_model_type为模型类型这里diff为差速控制
 ***
 # tf_tree图
 ## 正常运行时的tf树，tf树很重要，很多时候不能正常运行的时候就是tf树有问题
-
+![tf_tree](./frames.png "tf_tree")
 从tf树可以看到：   
 这里有个概念很重要frame_id和主题的区别，比如都叫odom的时候，frame_id表示里程计这个坐标系，而主题则表示这个里程计消息数据，两者是完全不一样的东西，比如frame_id是和map坐标系那样的东西，而主题是和速度主题cmd_vel这样的东西。    
 大多数运行不正确的时候可以在**终端运行**以下命令查看tf树：
